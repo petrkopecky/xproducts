@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+
+
+  web:
+    build:
+      dockerfile: Dockerfile
+    image: product-service
+    networks:
+      - enet
+      - web
+    ports:
+      - "8081:8080"
+
+
+
+
+networks:
+  enet:
+    driver: bridge
+  web:
+    name: shared-web
